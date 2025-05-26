@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jumpthegun-precommit-wrapper"
+description = "A wrapper for pre-commit to launch Python tools via JumpTheGun"
+authors = [
+  { name = "Tal Einat", email = "taleinat@gmail.com" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: MacOS :: MacOS X",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = ['jumpthegun', 'pre_commit']
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/taleinat/jumpthegun"
+
+[project.scripts]
+jumpthegun-precommit-wrapper-main = "jumpthegun_precommit_wrapper.main:main"
+
+[tool.hatch.version]
+path = "jumpthegun_precommit_wrapper/__version__.py"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
+  "/docs",
+]
+[tool.hatch.build.targets.sdist.shared-data]
+"jumpthegun_precommit_wrapper/entrypoint.sh" = "bin/pre-commit"
+
+[tool.hatch.build.targets.wheel]
+packages = ["jumpthegun_precommit_wrapper"]
+[tool.hatch.build.targets.wheel.shared-data]
+"jumpthegun_precommit_wrapper/entrypoint.sh" = "bin/pre-commit"
