@@ -6,4 +6,5 @@ Simply install this instead of pre-commit, e.g.:
 pipx install jumpthegun-precommit-wrapper
 ```
 
-Then use pre-commit as usual and enjoy it being much snappier!
+Then run `jtg-pre-commit` whenever you'd normally run `pre-commit`
+and enjoy it being much snappier!

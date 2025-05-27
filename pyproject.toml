@@ -45,9 +45,9 @@ exclude = [
   "/docs",
 ]
 [tool.hatch.build.targets.sdist.shared-data]
-"jumpthegun_precommit_wrapper/entrypoint.sh" = "bin/pre-commit"
+"jumpthegun_precommit_wrapper/entrypoint.sh" = "bin/jtg-pre-commit"
 
 [tool.hatch.build.targets.wheel]
 packages = ["jumpthegun_precommit_wrapper"]
 [tool.hatch.build.targets.wheel.shared-data]
-"jumpthegun_precommit_wrapper/entrypoint.sh" = "bin/pre-commit"
+"jumpthegun_precommit_wrapper/entrypoint.sh" = "bin/jtg-pre-commit"
